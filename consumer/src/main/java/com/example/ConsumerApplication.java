@@ -15,7 +15,7 @@ public class ConsumerApplication {
 
 	Logger logger = Logger.getLogger(ConsumerApplication.class);
 	
-	@StreamListener("channel")
+	@StreamListener("consumerInput")
 	public void log(Message<String> msg){
 		logger.info("Received msg: " + msg.getPayload());
 	}
@@ -28,5 +28,5 @@ public class ConsumerApplication {
 interface InputInterface {
 	
 	@Input
-	public SubscribableChannel channel();
+	public SubscribableChannel consumerInput();
 }

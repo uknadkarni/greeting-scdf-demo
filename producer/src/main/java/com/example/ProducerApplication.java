@@ -23,7 +23,7 @@ public class ProducerApplication {
 	
 	public ProducerApplication(OutputInterface oi) {
 		// TODO Auto-generated constructor stub
-		this.mc = oi.channel();
+		this.mc = oi.producerOutput();
 	}
 	
 	@PostMapping(value="/greet/{name}")
@@ -42,5 +42,5 @@ public class ProducerApplication {
 interface OutputInterface{
 	
 	@Output
-	public MessageChannel channel();
+	public MessageChannel producerOutput();
 }
