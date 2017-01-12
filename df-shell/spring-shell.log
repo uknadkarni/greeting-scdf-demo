@@ -1,0 +1,10 @@
+// dataflow 1.2.0.RELEASE log opened at 2017-01-11 20:54:09
+dataflow config server http://dataflow-server.local.pcfdev.io
+stream list
+app import --uri http://bit.ly/stream-applications-rabbit-maven
+// [failed] app import --uri file:///Users/unadkarni/workspace/scdf-raven/df-server/module_custom.properties
+app import --uri file:///Users/unadkarni/workspace/scdf-raven/df-shell/module_custom.properties
+stream create --name test --definition "source-sample | sink-sample"
+stream deploy test
+exit
+// dataflow 1.2.0.RELEASE log closed at 2017-01-11 22:46:15
