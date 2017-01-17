@@ -20,3 +20,15 @@ app import --uri file:///Users/unadkarni/workspace/greeting-scdf-demo/df-shell/m
 stream create --name test --definition "producer | consumer" --deploy
 app list
 stream deploy test
+// [failed] app unregister consumer
+app import --uri file:///Users/unadkarni/workspace/greeting-scdf-demo/df-shell/module_custom.properties
+// dataflow 1.2.0.RELEASE log opened at 2017-01-12 15:26:01
+dataflow config server http://dataflow-server.local.pcfdev.io
+stream list
+app list
+stream create --name test --definition "producer | consumer" --deploy
+// [failed] stream destroy test
+// [failed] stream list
+// [failed] stream list
+exit
+// dataflow 1.2.0.RELEASE log closed at 2017-01-12 15:50:47
